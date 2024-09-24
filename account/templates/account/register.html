@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<style type="text/css">
+	.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: 5rem;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input {
+  	margin-top: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+	.h3{
+		text-align: center;
+		font-size: 2.5rem;
+		color: white;
+	}
+	.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: blue;
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .2rem solid blue;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+	.btn:hover{
+    background: rgba(0, 112, 255, 0.2);
+    color: blue;
+    }
+	.form-signin label{
+	font-size: 1.3rem;
+	color: black;
+	}
+	a{
+	font-size: 1.3rem;
+	}
+	p{
+	font-size: 1.3rem;
+	color: white;
+	}
+	.form-signin .photo-container img{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 150%;
+    width: 100%;
+    object-fit:cover;
+}
+</style>
+<main class="form-signin w-100 m-auto">
+	<form method="post">{% csrf_token %}
+		<br>
+    	<br>
+    	<br>
+    	<h1 class="h3 mb-5 fw-normal">Register an account</h1>
+		<div class="form-floating">
+     		<input type="text" name="name" class="form-control" id="floatingInput" placeholder="Name">
+     		<label for="floatingInput">Name</label>
+     	</div>
+		<div class="form-floating">
+     		<input type="text" name="surname" class="form-control" id="floatingInput" placeholder="Surname">
+     		<label for="floatingInput">Surname</label>
+     	</div>
+    	<div class="form-floating">
+     		<input type="email" name="email" class="form-control" id="floatingInput" placeholder="Email address">
+     	    <label for="floatingInput">Email address</label>
+     	</div>
+     	<div class="form-floating">
+     		<input type="text" name="username" class="form-control" id="floatingInput" placeholder="username">
+     		<label for="floatingInput">Username</label>
+		</div>
+    	<div class="form-floating">
+     		<input type="password" name="password1" class="form-control" id="floatingPassword" placeholder="Password">
+     		<label for="floatingInput">Password</label>
+		<div class="form-floating">
+     		<input type="password" name="password2" class="form-control" id="floatingPassword" placeholder="Confirm password">
+     		<label for="floatingInput">Confirm password</label>
+
+     	</div>
+			<div class="form-floating">
+     		<input type="date" name="date_of_birth" class="form-control" id="floatingInput" placeholder="Date of Birth">
+     		<label for="floatingInput">Date of birth</label>
+
+     	</div>
+			<div class="form-floating">
+     		<input type="text" name="jmbg" class="form-control" id="floatingInput" placeholder="JMBG">
+     		<label for="floatingInput">JMBG</label>
+
+     	</div>
+			<div class="form-floating">
+     		<input type="text" name="address" class="form-control" id="floatingInput" placeholder="Address">
+     		<label for="floatingInput">Address</label>
+
+     	</div>
+			<div class="form-floating">
+     		<input type="text" name="phone_number" class="form-control" id="floatingInput" placeholder="Phone number">
+     		<label for="floatingInput">Phone number</label>
+
+     	</div>
+	{% for field in registration_form%}
+		{% for error in field.errors%}
+			<p style="color: red;">{{error}}</p>
+		{% endfor %}
+	{% endfor %}
+
+	{% if registration_form.non_field_errors %}
+
+		<div style="color:red">
+		<p>{{registration_form.non_field_errors}}</p>
+		</div>
+
+	{% endif %}
+
+
+    	</div>
+		<div class="photo-container">
+			<img src="{% static 'background.jpg' %}" alt="">
+		</div>
+
+    	<button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+
+
+  	</form>
+</main>
+<div class="d-flex flex-column">
+	<p style="text-align: center">If you have an account, you can login <a class="m-auto" href="{% url 'login' %}">here</a>!</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}

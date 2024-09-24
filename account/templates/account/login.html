@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<style type="text/css">
+	.form-signin {
+    width: 100%;
+    max-width: 350px;
+    padding: 5px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 300px;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: 5rem;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="password"] {
+  	margin-top: 5px;
+    margin-bottom: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+	.h3{
+		color: white;
+		text-align: center;
+		font-size: 2.5rem;
+		margin-top: 60px;
+	}
+	.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: blue;
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .2rem solid blue;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+	.btn:hover{
+    background: rgba(0, 112, 255, 0.2);
+    color: blue;
+    }
+	.form-signin label{
+	font-size: 1.2rem;
+	color: black;
+	}
+	a{
+	font-size: 1.3rem;
+	}
+	p{
+	font-size: 1.3rem;
+	color: white;
+	}
+.form-signin .photo-container img{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 120%;
+    width: 100%;
+    object-fit:cover;
+}
+
+</style>
+<main class="form-signin w-100 ">
+	<form method="post">{% csrf_token %}
+		<br>
+    	<br>
+    	<br>	
+    	<h1 class="h3 mb-5 fw-normal">Login</h1>
+    	<div class="form-floating">
+     		<input type="email" name="email" class="form-control" id="floatingInput" placeholder="Email address">
+     		<label for="floatingInput">Email address</label>
+      
+    	</div>
+    	<div class="form-floating">
+     		<input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+     		<label for="floatingInput">Password</label>
+
+
+	{% for field in login_form%}
+		{% for error in field.errors%}
+			<p style="color: red;">{{error}}</p>
+		{% endfor %}
+	{% endfor %}
+
+	{% if login_form.non_field_errors %}
+
+		<div style="color:red">
+		<p>{{login_form.non_field_errors}}</p>
+		</div>
+	      		
+	{% endif %}
+
+
+    	</div>
+		<div class="photo-container">
+			<img src="{% static 'background.jpg' %}" alt="">
+		</div>
+
+    
+    	<button class="btn btn-primary w-100 py-2" type="submit">Log in</button>
+
+
+  	</form>
+</main>
+<div class="d-flex flex-column">
+	<a class="m-auto" href="{% url 'password_reset' %}" style="color: red;"> Reset password</a>
+</div>
+<div class="d-flex flex-column">
+	<p style="text-align: center">If you don't have an account you can make <a class="m-auto" href="{% url 'register' %}">here</a>!</p>
+</div>
+
+
+{% endblock content %}
