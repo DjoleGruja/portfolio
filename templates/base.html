@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{% static 'favicon.ico' %}">
+	<title> Travex 🌍✈️</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	{% include 'snippets/header.html' %}
+	
+
+</head>
+
+<body>
+ 	<!-- Body -->
+ 	<style type="text/css">
+ 		.main{
+ 			min-height: 100vh;
+ 			height: 100%;
+		}
+	</style>
+	<div class="main">
+		{% block content %}
+
+		{% endblock content%}
+	</div>
+	<!-- End Body -->
+	{% include 'snippets/footer.html' %}
+
+</body>
+</html>

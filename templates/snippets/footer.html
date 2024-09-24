@@ -1,0 +1,83 @@
+
+<style type="text/css">
+.footer{
+	background: #333;
+}
+.footer .box-container{
+	display: flex;
+	flex-wrap; wrap;
+	gap: 1.5rem;
+}
+.footer .box-container .box{
+	padding: 1rem 0;
+	flex: 1 1 25rem;
+}
+.footer .box-container .box h3{
+	font-size: 2.5rem;
+	padding: .7rem 0;
+	color: #fff;
+}
+.footer .box-container .box p{
+	font-size: 1.5rem;
+	padding: .7rem 0;
+	color: #eee;
+}
+.footer .box-container .box a{
+	display: block;
+	font-size: 1.5rem;
+	padding: .7rem 0;
+	color: #eee;
+}
+.footer .box-container .box a:hover{
+	color: green;
+	text-decoration: underline;
+}
+.footer .credit{
+	text-align: center;
+	padding: 2rem 1rem;
+	margin-top: 1rem;
+	font-size: 2rem;
+	font-weight: normal;
+	color: #fff;
+	border-top: .1rem solid rgba(255,255,256,.2);
+}
+.footer .credit span{
+	color: green;
+}
+
+</style>
+<!-- section footer start -->
+<section class="footer">
+	<div class="box-container">
+
+		<div class="box">
+			<h3>About us</h3>
+			<p>We are a dedicated travel agency committed to creating unforgettable experiences tailored to your unique travel dreams and preferences.</p>
+		</div>
+		<div class="box">
+			<h3>Branch location</h3>
+			<a href="#">Serbia</a>
+			<a href="#">USA</a>
+			<a href="#">Japan</a>
+			<a href="#">France</a>
+		</div>
+		<div class="box">
+			<h3>Quick links</h3>
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'travel' %}">Travel</a>
+			<a href="{% url 'contact' %}">Contact</a>
+		</div>
+		<div class="box">
+			<h3>Follow us</h3>
+			<a href="#">Facebook</a>
+			<a href="#">Instagram</a>
+			<a href="#">Linkedin</a>
+		</div>
+
+	</div>
+	<h1 class="credit"> Created by <span> Djordje Grujic </span> | all rights reserved! </h1>
+
+
+</section>
+
+<!-- section footer end -->
