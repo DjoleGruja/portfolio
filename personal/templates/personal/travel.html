@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<style type="text/css">
+    section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+.heading span{
+    font-size: 3.5rem;
+    background:rgba(41, 255, 16, 0.2);
+    color: green;
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+.heading span.space{
+    background: none;
+    }
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+.heading span{
+        font-size:2.5rem;
+    }
+    .packages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    }
+    .packages .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    }
+     .packages .box-container img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    }
+     .packages .box-container .box .content{
+    padding: 2rem;
+    }
+    .packages .box-container .box .content h3{
+    font-size: 2rem;
+    color: #333;
+    }
+    .packages .box-container .box .content h3 i{
+    font-size: 2rem;
+    color: green;
+    }
+    .packages .box-container .box .content p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+    }
+     .packages .box-container .box .content .stars{
+     font-size: 1.7rem;
+     color: green;
+     }
+      .packages .box-container .box .content .price{
+      font-size: 2rem;
+      color: #333;
+      padding: 1rem;
+      }
+       .packages .box-container .box .content .price span{
+       color: #666;
+       font-size: 1.5rem;
+       text-decoration: line-through;
+       }
+
+    .btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: green;
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .2rem solid green;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+    .btn:hover{
+    background: rgba(41, 255, 16, 0.2);
+    color: green;
+    }
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem
+    }
+    .services .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    }
+    .services .box-container .box i{
+    padding: 1rem;
+    font-size: 5rem;
+    color: green;
+    }
+    .services .box-container .box h3{
+    font-size: 2.5rem;
+    color: #333;
+    }
+    .services .box-container .box p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+    }
+    .services .box-container .box:hover{
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1)
+    }
+
+
+
+</style>
+<!-- travel packages section start -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading">
+        <span>P</span>
+        <span>A</span>
+        <span>C</span>
+        <span>K</span>
+        <span>A</span>
+        <span>G</span>
+        <span>E</span>
+        <span>S</span>
+    </h1>
+<div class="box-container">
+    <div class="box">
+        <img src="{% static 'img1.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Hawaii</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="{% static 'img2.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Bali</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="{% static 'img3.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Santorini</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="{% static 'img4.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Kyoto</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="{% static 'img5.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Paris</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="{% static 'img6.jpg'%}" alt="" >
+        <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Costa Rica</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price"> $90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book now</a>
+        </div>
+    </div>
+    </div>
+
+
+</section>
+<!-- travel packages section end -->
+
+<!-- travel services section start -->
+
+<section class="services" id="services">
+
+    <h1 class="heading">
+        <span>S</span>
+        <span>E</span>
+        <span>R</span>
+        <span>V</span>
+        <span>I</span>
+        <span>C</span>
+        <span>E</span>
+        <span>S</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-hotel"></i>
+            <h3>Affordable hotels</h3>
+            <p>Our affordable hotels provide comfort and quality at budget-friendly prices. Enjoy great service, clean rooms, and convenient locations without overspending on your stay.</p>
+
+        </div>
+        <div class="box">
+            <i class="fas fa-utensils"></i>
+            <h3>Food and drinks</h3>
+            <p>Enjoy delicious meals and refreshing drinks at top local restaurants and cafes. Whether you're craving local cuisine or international flavors, we’ve got you covered with great dining options for every taste.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Safety guide</h3>
+            <p>Your safety is our priority. We provide essential safety tips and guidelines to ensure a worry-free trip, helping you stay informed and prepared while exploring new destinations. Travel with confidence!</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-globe-asia"></i>
+            <h3>Around the world</h3>
+            <p>Discover amazing destinations across the globe. From bustling cities to tranquil escapes, our services cover a wide range of locations, offering you unforgettable experiences no matter where your journey takes you.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-hiking"></i>
+            <h3>Adventures</h3>
+            <p>Unleash your adventurous spirit with our exciting activities and excursions! Whether it’s hiking, snorkeling, or zip-lining, we offer a variety of thrilling experiences that cater to every adventurer's heart. Embark on unforgettable journeys and create lasting memories!</p>
+        </div>
+    </div>
+</section>
+<!-- travel services section end -->
+{% endblock content %}
